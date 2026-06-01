@@ -1,0 +1,18 @@
+{
+  "name": "nariyanto/wp-cron-inspector-lite",
+  "description": "Find duplicate, stuck, and suspicious WordPress cron events before they cause support issues.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "Nariyanto\\WPCronInspectorLite\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": "php tests/run.php",
+    "lint": "find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l"
+  },
+  "require": {
+    "php": ">=7.4"
+  }
+}
