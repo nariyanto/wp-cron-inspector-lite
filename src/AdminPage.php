@@ -36,10 +36,10 @@ final class AdminPage
 
             <h2><?php echo esc_html__('Summary', 'wp-cron-inspector-lite'); ?></h2>
             <ul>
-                <li><?php printf(esc_html__('Total events: %d', 'wp-cron-inspector-lite'), (int) $report['summary']['total_events']); ?></li>
-                <li><?php printf(esc_html__('Duplicate event instances: %d', 'wp-cron-inspector-lite'), (int) $report['summary']['duplicate_hook_count']); ?></li>
-                <li><?php printf(esc_html__('Frequent hooks: %d', 'wp-cron-inspector-lite'), (int) $report['summary']['frequent_hook_count']); ?></li>
-                <li><?php printf(esc_html__('Overdue events: %d', 'wp-cron-inspector-lite'), (int) $report['summary']['overdue_event_count']); ?></li>
+                <li><?php /* translators: %d: total number of scheduled cron events. */ printf(esc_html__('Total events: %d', 'wp-cron-inspector-lite'), (int) $report['summary']['total_events']); ?></li>
+                <li><?php /* translators: %d: number of cron event instances whose hook appears more than once. */ printf(esc_html__('Duplicate event instances: %d', 'wp-cron-inspector-lite'), (int) $report['summary']['duplicate_hook_count']); ?></li>
+                <li><?php /* translators: %d: number of cron hooks scheduled more frequently than hourly. */ printf(esc_html__('Frequent hooks: %d', 'wp-cron-inspector-lite'), (int) $report['summary']['frequent_hook_count']); ?></li>
+                <li><?php /* translators: %d: number of cron events scheduled before the current time. */ printf(esc_html__('Overdue events: %d', 'wp-cron-inspector-lite'), (int) $report['summary']['overdue_event_count']); ?></li>
             </ul>
 
             <?php if (! empty($report['duplicates'])) : ?>
