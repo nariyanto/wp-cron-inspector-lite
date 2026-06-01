@@ -4,7 +4,11 @@ Find duplicate, stuck, and suspicious WordPress cron events before they cause su
 
 This plugin is read-only in the initial version. It lists scheduled WP-Cron events, highlights duplicate hooks, flags unusually frequent recurring events, and provides a support-friendly report.
 
-## Planned v0.1 scope
+## Screenshot
+
+![WP Cron Inspector Lite running on PeepSo staging](docs/screenshots/peepso-staging-cron-inspector.png)
+
+## Current v0.1 scope
 
 - Admin page under **Tools → Cron Inspector**
 - Scheduled event list
