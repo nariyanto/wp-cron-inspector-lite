@@ -72,6 +72,13 @@ assert_true(in_array('peepso_daily_email', $report['duplicates'], true), 'it rep
 assert_true(in_array('backup_every_minute', $report['frequent_hooks'], true), 'it reports unusually frequent recurring hooks');
 assert_same(1, $report['summary']['frequent_hook_count'], 'it counts frequent hooks');
 
+$report_text = $inspector->reportText();
+assert_true(strpos($report_text, 'WP Cron Inspector Lite Report') !== false, 'it creates a copy-friendly text report title');
+assert_true(strpos($report_text, 'Total events: 4') !== false, 'it includes summary totals in the text report');
+assert_true(strpos($report_text, 'Duplicate hooks: peepso_daily_email') !== false, 'it includes duplicate hooks in the text report');
+assert_true(strpos($report_text, 'Frequent hooks: backup_every_minute') !== false, 'it includes frequent hooks in the text report');
+assert_true(strpos($report_text, 'peepso_daily_email | 2023-11-14 22:13:20 | daily | 86400 | overdue') !== false, 'it includes event rows in the text report');
+
 if ($failures > 0) {
     fwrite(STDERR, "{$failures} test failure(s).\n");
     exit(1);

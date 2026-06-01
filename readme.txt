@@ -20,6 +20,7 @@ Initial scope:
 * Duplicate hook detection.
 * Unusually frequent recurring event detection.
 * Overdue event count.
+* Copy support report button.
 * Read-only default behavior.
 
 No destructive cleanup actions are included in v0.1.0.

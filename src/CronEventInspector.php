@@ -76,6 +76,48 @@ final class CronEventInspector
         return $events;
     }
 
+    public function reportText(): string
+    {
+        $report = $this->report();
+        $summary = $report['summary'];
+        $lines = [
+            'WP Cron Inspector Lite Report',
+            'Generated (GMT): ' . gmdate('Y-m-d H:i:s', $this->now),
+            '',
+            'Summary',
+            'Total events: ' . $summary['total_events'],
+            'Duplicate event instances: ' . $summary['duplicate_hook_count'],
+            'Frequent hooks: ' . $summary['frequent_hook_count'],
+            'Overdue events: ' . $summary['overdue_event_count'],
+            '',
+            'Duplicate hooks: ' . (empty($report['duplicates']) ? 'none' : implode(', ', $report['duplicates'])),
+            'Frequent hooks: ' . (empty($report['frequent_hooks']) ? 'none' : implode(', ', $report['frequent_hooks'])),
+            '',
+            'Events',
+            'Hook | Next run (GMT) | Schedule | Interval seconds | Flags',
+        ];
+
+        foreach ($report['events'] as $event) {
+            $flags = array_filter([
+                ! empty($event['is_overdue']) ? 'overdue' : '',
+                ! empty($event['is_frequent']) ? 'frequent' : '',
+            ]);
+
+            $lines[] = implode(
+                ' | ',
+                [
+                    (string) $event['hook'],
+                    (string) $event['next_run_gmt'],
+                    (string) $event['schedule'],
+                    null === $event['interval'] ? '-' : (string) $event['interval'],
+                    empty($flags) ? '-' : implode(', ', $flags),
+                ]
+            );
+        }
+
+        return implode("\n", $lines);
+    }
+
     /**
      * @return array{summary:array<string,int>,duplicates:array<int,string>,frequent_hooks:array<int,string>,events:array<int,array<string,mixed>>}
      */

@@ -10,7 +10,7 @@ This plugin is read-only in the initial version. It lists scheduled WP-Cron even
 - Scheduled event list
 - Duplicate hook detection
 - Unusually frequent event detection
-- Copy/export-friendly report
+- Copy support report button for support tickets/debugging notes
 - Capability checks and escaped output
 - No destructive cleanup actions
 

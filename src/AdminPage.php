@@ -28,6 +28,7 @@ final class AdminPage
         $cron = function_exists('_get_cron_array') ? _get_cron_array() : [];
         $inspector = new CronEventInspector(is_array($cron) ? $cron : []);
         $report = $inspector->report();
+        $report_text = $inspector->reportText();
         ?>
         <div class="wrap">
             <h1><?php echo esc_html__('WP Cron Inspector Lite', 'wp-cron-inspector-lite'); ?></h1>
@@ -50,6 +51,47 @@ final class AdminPage
                 <h2><?php echo esc_html__('Unusually frequent hooks', 'wp-cron-inspector-lite'); ?></h2>
                 <p><?php echo esc_html(implode(', ', $report['frequent_hooks'])); ?></p>
             <?php endif; ?>
+
+            <h2><?php echo esc_html__('Copy support report', 'wp-cron-inspector-lite'); ?></h2>
+            <p><?php echo esc_html__('Use this read-only report in support tickets or debugging notes. Review it before sharing externally.', 'wp-cron-inspector-lite'); ?></p>
+            <p>
+                <button type="button" class="button button-secondary" id="wp-cron-inspector-lite-copy-report">
+                    <?php echo esc_html__('Copy report', 'wp-cron-inspector-lite'); ?>
+                </button>
+                <span id="wp-cron-inspector-lite-copy-status" aria-live="polite" style="margin-left: 8px;"></span>
+            </p>
+            <textarea id="wp-cron-inspector-lite-report" class="large-text code" rows="12" readonly><?php echo esc_textarea($report_text); ?></textarea>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var button = document.getElementById('wp-cron-inspector-lite-copy-report');
+                    var report = document.getElementById('wp-cron-inspector-lite-report');
+                    var status = document.getElementById('wp-cron-inspector-lite-copy-status');
+
+                    if (!button || !report || !status) {
+                        return;
+                    }
+
+                    button.addEventListener('click', function () {
+                        report.focus();
+                        report.select();
+
+                        var markCopied = function () {
+                            status.textContent = <?php echo wp_json_encode(__('Copied.', 'wp-cron-inspector-lite')); ?>;
+                        };
+
+                        if (navigator.clipboard && navigator.clipboard.writeText) {
+                            navigator.clipboard.writeText(report.value).then(markCopied).catch(function () {
+                                document.execCommand('copy');
+                                markCopied();
+                            });
+                            return;
+                        }
+
+                        document.execCommand('copy');
+                        markCopied();
+                    });
+                });
+            </script>
 
             <h2><?php echo esc_html__('Events', 'wp-cron-inspector-lite'); ?></h2>
             <table class="widefat striped">
