@@ -8,7 +8,8 @@ Plugin slug target: `cron-inspector-lite`
 - Public GitHub repository exists.
 - Plugin has been tested on the staging site `peepso.nariyanto.id`.
 - Plugin is read-only and does not delete or mutate cron events.
-- CI runs PHP tests and PHP syntax checks.
+- CI runs PHP tests, readme metadata validation, and PHP syntax checks.
+- Release workflow builds `dist/cron-inspector-lite.zip` for GitHub release assets.
 - A screenshot from the staging site is available in `docs/screenshots/` for GitHub documentation.
 - Translation template exists at `languages/cron-inspector-lite.pot`.
 

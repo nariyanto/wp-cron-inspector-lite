@@ -22,8 +22,16 @@ This plugin is read-only in the initial version. It lists scheduled WP-Cron even
 
 ```bash
 php tests/run.php
+php tests/validate-readme.php
 find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
+bash scripts/build-release.sh
 ```
+
+The release package is written to `dist/cron-inspector-lite.zip`.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
