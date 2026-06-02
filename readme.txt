@@ -1,4 +1,4 @@
-=== WP Cron Inspector Lite ===
+=== Cron Inspector Lite ===
 Contributors: nariyanto
 Tags: cron, wp-cron, debugging, support, admin
 Requires at least: 6.0
@@ -12,7 +12,7 @@ Find duplicate, stuck, and suspicious WordPress cron events before they cause su
 
 == Description ==
 
-WP Cron Inspector Lite is a read-only admin utility for support and debugging workflows. It helps you inspect scheduled WP-Cron events, identify duplicate hooks, flag unusually frequent events, and spot overdue jobs.
+Cron Inspector Lite is a read-only admin utility for support and debugging workflows. It helps you inspect scheduled WP-Cron events, identify duplicate hooks, flag unusually frequent events, and spot overdue jobs.
 
 Initial scope:
 
@@ -28,7 +28,7 @@ No destructive cleanup actions are included in v0.1.0.
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/`.
-2. Activate **WP Cron Inspector Lite** from the Plugins screen.
+2. Activate **Cron Inspector Lite** from the Plugins screen.
 3. Open **Tools → Cron Inspector**.
 
 == Frequently Asked Questions ==

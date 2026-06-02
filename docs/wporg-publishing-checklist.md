@@ -1,7 +1,7 @@
 # WordPress.org Publishing Checklist
 
 Repository: `wp-cron-inspector-lite`
-Plugin slug target: `wp-cron-inspector-lite`
+Plugin slug target: `cron-inspector-lite`
 
 ## Current status
 
@@ -10,13 +10,13 @@ Plugin slug target: `wp-cron-inspector-lite`
 - Plugin is read-only and does not delete or mutate cron events.
 - CI runs PHP tests and PHP syntax checks.
 - A screenshot from the staging site is available in `docs/screenshots/` for GitHub documentation.
-- Translation template exists at `languages/wp-cron-inspector-lite.pot`.
+- Translation template exists at `languages/cron-inspector-lite.pot`.
 
 ## Before WordPress.org submission
 
 - [ ] Finalize the v0.1.0 feature scope; avoid adding destructive cleanup in the first submission.
-- [ ] Review all user-facing strings for text domain `wp-cron-inspector-lite`.
-- [ ] Regenerate `languages/wp-cron-inspector-lite.pot` after any string changes.
+- [ ] Review all user-facing strings for text domain `cron-inspector-lite`.
+- [ ] Regenerate `languages/cron-inspector-lite.pot` after any string changes.
 - [ ] Run local tests: `php tests/run.php`.
 - [ ] Run PHP syntax checks: `find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l`.
 - [ ] Confirm `readme.txt` metadata: contributors, tags, requires, tested up to, requires PHP, stable tag, license.

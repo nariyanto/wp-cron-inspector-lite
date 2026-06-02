@@ -1,4 +1,4 @@
-# WP Cron Inspector Lite
+# Cron Inspector Lite
 
 Find duplicate, stuck, and suspicious WordPress cron events before they cause support issues.
 
@@ -6,7 +6,7 @@ This plugin is read-only in the initial version. It lists scheduled WP-Cron even
 
 ## Screenshot
 
-![WP Cron Inspector Lite running on PeepSo staging](docs/screenshots/peepso-staging-cron-inspector.png)
+![Cron Inspector Lite running on PeepSo staging](docs/screenshots/peepso-staging-cron-inspector.png)
 
 ## Current v0.1 scope
 

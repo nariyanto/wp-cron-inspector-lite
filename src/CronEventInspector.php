@@ -81,7 +81,7 @@ final class CronEventInspector
         $report = $this->report();
         $summary = $report['summary'];
         $lines = [
-            'WP Cron Inspector Lite Report',
+            'Cron Inspector Lite Report',
             'Generated (GMT): ' . gmdate('Y-m-d H:i:s', $this->now),
             '',
             'Summary',
