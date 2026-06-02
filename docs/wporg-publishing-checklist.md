@@ -11,6 +11,8 @@ Plugin slug target: `cron-inspector-lite`
 - CI runs PHP tests, readme metadata validation, and PHP syntax checks.
 - Release workflow builds `dist/cron-inspector-lite.zip` for GitHub release assets.
 - A screenshot from the staging site is available in `docs/screenshots/` for GitHub documentation.
+- WordPress.org banner/icon assets are prepared in `.wordpress-org/`.
+- Submission notes are prepared in `docs/wordpress-org-submission-notes.md`.
 - Translation template exists at `languages/cron-inspector-lite.pot`.
 
 ## Before WordPress.org submission
