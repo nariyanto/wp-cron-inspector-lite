@@ -28,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Nariyanto\\WPCronInspectorLite\\": "src/"
+      "Nariyanto\\CronDiagnostics\\": "src/"
     }
   },
   "scripts": {

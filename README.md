@@ -1,4 +1,4 @@
-# Cron Inspector Lite
+# Nariyanto Cron Diagnostics
 
 [![CI](https://github.com/nariyanto/wp-cron-inspector-lite/actions/workflows/ci.yml/badge.svg)](https://github.com/nariyanto/wp-cron-inspector-lite/actions/workflows/ci.yml)
 [![Latest Release](https://img.shields.io/github/v/release/nariyanto/wp-cron-inspector-lite?label=release)](https://github.com/nariyanto/wp-cron-inspector-lite/releases)
@@ -13,11 +13,11 @@ This plugin is read-only in the initial version. It lists scheduled WP-Cron even
 
 ## Screenshot
 
-![Cron Inspector Lite running on PeepSo staging](docs/screenshots/peepso-staging-cron-inspector.png)
+![Nariyanto Cron Diagnostics running on PeepSo staging](docs/screenshots/peepso-staging-cron-inspector.png)
 
 ## Current v0.1 scope
 
-- Admin page under **Tools → Cron Inspector**
+- Admin page under **Tools → Cron Diagnostics**
 - Scheduled event list
 - Duplicate hook detection
 - Unusually frequent event detection
@@ -34,7 +34,7 @@ find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
 bash scripts/build-release.sh
 ```
 
-The release package is written to `dist/cron-inspector-lite.zip`.
+The release package is written to `dist/nariyanto-cron-diagnostics.zip`.
 
 ## Changelog
 

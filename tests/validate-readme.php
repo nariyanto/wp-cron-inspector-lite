@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 $root = dirname(__DIR__);
 $readme = file_get_contents($root . '/readme.txt');
-$plugin = file_get_contents($root . '/cron-inspector-lite.php');
+$plugin = file_get_contents($root . '/nariyanto-cron-diagnostics.php');
 
 if (false === $readme || false === $plugin) {
     fwrite(STDERR, "Unable to read plugin metadata files.\n");
@@ -14,14 +14,14 @@ if (false === $readme || false === $plugin) {
 $failures = [];
 
 $required_readme_patterns = [
-    '/^=== Cron Inspector Lite ===$/m' => 'readme plugin title',
+    '/^=== Nariyanto Cron Diagnostics ===$/m' => 'readme plugin title',
     '/^Contributors:\s*nariyanto$/m' => 'readme contributors',
     '/^Requires at least:\s*6\.0$/m' => 'minimum WordPress version',
     '/^Requires PHP:\s*7\.4$/m' => 'minimum PHP version',
-    '/^Stable tag:\s*0\.1\.0$/m' => 'stable tag',
+    '/^Stable tag:\s*0\.1\.1$/m' => 'stable tag',
     '/^License:\s*GPLv2 or later$/m' => 'license',
     '/== Changelog ==/' => 'changelog section',
-    '/= 0\.1\.0 =/' => '0.1.0 changelog entry',
+    '/= 0\.1\.1 =/' => '0.1.1 changelog entry',
 ];
 
 foreach ($required_readme_patterns as $pattern => $label) {
@@ -31,9 +31,9 @@ foreach ($required_readme_patterns as $pattern => $label) {
 }
 
 $required_plugin_patterns = [
-    '/Plugin Name:\s*Cron Inspector Lite/' => 'plugin name',
-    '/Version:\s*0\.1\.0/' => 'plugin version',
-    '/Text Domain:\s*cron-inspector-lite/' => 'text domain',
+    '/Plugin Name:\s*Nariyanto Cron Diagnostics/' => 'plugin name',
+    '/Version:\s*0\.1\.1/' => 'plugin version',
+    '/Text Domain:\s*nariyanto-cron-diagnostics/' => 'text domain',
     '/Domain Path:\s*\/languages/' => 'domain path',
     '/Requires at least:\s*6\.0/' => 'plugin minimum WordPress version',
     '/Requires PHP:\s*7\.4/' => 'plugin minimum PHP version',
@@ -46,7 +46,7 @@ foreach ($required_plugin_patterns as $pattern => $label) {
     }
 }
 
-if (str_contains($readme, 'wp-cron-inspector-lite')) {
+if (str_contains($readme, 'Cron Inspector Lite') || str_contains($readme, 'cron-inspector-lite')) {
     $failures[] = 'readme.txt still contains old plugin slug/name text.';
 }
 

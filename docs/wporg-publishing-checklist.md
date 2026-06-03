@@ -1,7 +1,7 @@
 # WordPress.org Publishing Checklist
 
 Repository: `wp-cron-inspector-lite`
-Plugin slug target: `cron-inspector-lite`
+Plugin slug target: `nariyanto-cron-diagnostics`
 
 ## Current status
 
@@ -9,17 +9,17 @@ Plugin slug target: `cron-inspector-lite`
 - Plugin has been tested on the staging site `peepso.nariyanto.id`.
 - Plugin is read-only and does not delete or mutate cron events.
 - CI runs PHP tests, readme metadata validation, and PHP syntax checks.
-- Release workflow builds `dist/cron-inspector-lite.zip` for GitHub release assets.
+- Release workflow builds `dist/nariyanto-cron-diagnostics.zip` for GitHub release assets.
 - A screenshot from the staging site is available in `docs/screenshots/` for GitHub documentation.
 - WordPress.org banner/icon assets are prepared in `.wordpress-org/`.
 - Submission notes are prepared in `docs/wordpress-org-submission-notes.md`.
-- Translation template exists at `languages/cron-inspector-lite.pot`.
+- Translation template exists at `languages/nariyanto-cron-diagnostics.pot`.
 
 ## Before WordPress.org submission
 
-- [ ] Finalize the v0.1.0 feature scope; avoid adding destructive cleanup in the first submission.
-- [ ] Review all user-facing strings for text domain `cron-inspector-lite`.
-- [ ] Regenerate `languages/cron-inspector-lite.pot` after any string changes.
+- [ ] Finalize the v0.1.1 feature scope; avoid adding destructive cleanup in the first submission.
+- [ ] Review all user-facing strings for text domain `nariyanto-cron-diagnostics`.
+- [ ] Regenerate `languages/nariyanto-cron-diagnostics.pot` after any string changes.
 - [ ] Run local tests: `php tests/run.php`.
 - [ ] Run PHP syntax checks: `find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l`.
 - [ ] Confirm `readme.txt` metadata: contributors, tags, requires, tested up to, requires PHP, stable tag, license.
@@ -32,7 +32,7 @@ Plugin slug target: `cron-inspector-lite`
 
 Keep the first submission intentionally small:
 
-- Read-only admin page under Tools → Cron Inspector.
+- Read-only admin page under Tools → Cron Diagnostics.
 - Cron event list.
 - Duplicate hook detection.
 - Frequent recurring hook detection.
@@ -54,7 +54,7 @@ Do not include cron deletion/cleanup actions until after the plugin is approved 
 - [ ] Check out the assigned WordPress.org SVN repository.
 - [ ] Copy plugin files into `trunk/`.
 - [ ] Put screenshots/banner/icon in SVN `assets/`.
-- [ ] Create `tags/0.1.0/` from the approved trunk.
+- [ ] Create `tags/0.1.1/` from the approved trunk.
 - [ ] Commit to SVN.
 - [ ] Verify the public plugin page renders correctly.
-- [ ] Tag a matching GitHub release `v0.1.0`.
+- [ ] Tag a matching GitHub release `v0.1.1`.
