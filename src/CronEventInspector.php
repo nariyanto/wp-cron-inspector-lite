@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nariyanto\CronDiagnostics;
+namespace SNWorks\CronDiagnostics;
 
 /**
  * Turns WordPress' internal cron array into a support-friendly report.
@@ -81,7 +81,7 @@ final class CronEventInspector
         $report = $this->report();
         $summary = $report['summary'];
         $lines = [
-            'Nariyanto Cron Diagnostics Report',
+            'SNWorks Cron Diagnostics Report',
             'Generated (GMT): ' . gmdate('Y-m-d H:i:s', $this->now),
             '',
             'Summary',

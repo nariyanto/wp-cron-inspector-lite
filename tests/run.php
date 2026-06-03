@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../src/CronEventInspector.php';
 
-use Nariyanto\CronDiagnostics\CronEventInspector;
+use SNWorks\CronDiagnostics\CronEventInspector;
 
 $failures = 0;
 
@@ -73,7 +73,7 @@ assert_true(in_array('backup_every_minute', $report['frequent_hooks'], true), 'i
 assert_same(1, $report['summary']['frequent_hook_count'], 'it counts frequent hooks');
 
 $report_text = $inspector->reportText();
-assert_true(strpos($report_text, 'Nariyanto Cron Diagnostics Report') !== false, 'it creates a copy-friendly text report title');
+assert_true(strpos($report_text, 'SNWorks Cron Diagnostics Report') !== false, 'it creates a copy-friendly text report title');
 assert_true(strpos($report_text, 'Total events: 4') !== false, 'it includes summary totals in the text report');
 assert_true(strpos($report_text, 'Duplicate hooks: peepso_daily_email') !== false, 'it includes duplicate hooks in the text report');
 assert_true(strpos($report_text, 'Frequent hooks: backup_every_minute') !== false, 'it includes frequent hooks in the text report');

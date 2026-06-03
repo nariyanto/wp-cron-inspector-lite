@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-PLUGIN_SLUG="nariyanto-cron-diagnostics"
+PLUGIN_SLUG="snworks-cron-diagnostics"
 DIST_DIR="$ROOT_DIR/dist"
 BUILD_DIR="$DIST_DIR/build"
 PACKAGE_DIR="$BUILD_DIR/$PLUGIN_SLUG"
@@ -18,11 +18,11 @@ copy_file() {
   cp "$ROOT_DIR/$src" "$dest"
 }
 
-copy_file "nariyanto-cron-diagnostics.php"
+copy_file "snworks-cron-diagnostics.php"
 copy_file "readme.txt"
 copy_file "CHANGELOG.md"
 copy_file "assets/admin.js"
-copy_file "languages/nariyanto-cron-diagnostics.pot"
+copy_file "languages/snworks-cron-diagnostics.pot"
 copy_file "src/AdminPage.php"
 copy_file "src/CronEventInspector.php"
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate simple WordPress.org-ready placeholder assets for Nariyanto Cron Diagnostics.
+"""Generate simple WordPress.org-ready placeholder assets for SNWorks Cron Diagnostics.
 
 Uses only Python stdlib so it works in minimal CI/server environments.
 """
