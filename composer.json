@@ -3,6 +3,29 @@
   "description": "Find duplicate, stuck, and suspicious WordPress cron events before they cause support issues.",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
+  "homepage": "https://github.com/nariyanto/wp-cron-inspector-lite",
+  "support": {
+    "issues": "https://github.com/nariyanto/wp-cron-inspector-lite/issues",
+    "source": "https://github.com/nariyanto/wp-cron-inspector-lite"
+  },
+  "authors": [
+    {
+      "name": "Septiyan Nariyanto",
+      "homepage": "https://nariyanto.id"
+    }
+  ],
+  "keywords": [
+    "wordpress",
+    "wordpress-plugin",
+    "wp-cron",
+    "cron",
+    "debugging",
+    "support"
+  ],
+  "require": {
+    "php": ">=7.4",
+    "composer/installers": "^2.2"
+  },
   "autoload": {
     "psr-4": {
       "Nariyanto\\WPCronInspectorLite\\": "src/"
@@ -13,8 +36,5 @@
     "validate-readme": "php tests/validate-readme.php",
     "lint": "find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l",
     "build-release": "bash scripts/build-release.sh"
-  },
-  "require": {
-    "php": ">=7.4"
   }
 }
