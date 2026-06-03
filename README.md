@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/nariyanto/wp-cron-inspector-lite/actions/workflows/ci.yml/badge.svg)](https://github.com/nariyanto/wp-cron-inspector-lite/actions/workflows/ci.yml)
 [![Latest Release](https://img.shields.io/github/v/release/nariyanto/wp-cron-inspector-lite?label=release)](https://github.com/nariyanto/wp-cron-inspector-lite/releases)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/nariyanto/wp-cron-inspector-lite?label=packagist%20downloads)](https://packagist.org/packages/nariyanto/wp-cron-inspector-lite)
+[![Packagist Version](https://img.shields.io/packagist/v/nariyanto/wp-cron-inspector-lite?label=packagist)](https://packagist.org/packages/nariyanto/wp-cron-inspector-lite)
 [![PHP](https://img.shields.io/badge/PHP-%3E%3D%207.4-777bb4.svg)](https://www.php.net/)
 [![WordPress](https://img.shields.io/badge/WordPress-%3E%3D%206.0-21759b.svg)](https://wordpress.org/)
 [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
