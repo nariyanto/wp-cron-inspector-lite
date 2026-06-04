@@ -39,12 +39,12 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: snworks-cron-diagnostics
-          path: dist/snworks-cron-diagnostics.zip
+          name: nariyanto-cron-diagnostics
+          path: dist/nariyanto-cron-diagnostics.zip
 
       - name: Publish GitHub release asset
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/snworks-cron-diagnostics.zip
+          files: dist/nariyanto-cron-diagnostics.zip
           generate_release_notes: true

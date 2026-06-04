@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SNWorks\CronDiagnostics;
+namespace Nariyanto\CronDiagnostics;
 
 final class AdminPage
 {
@@ -14,10 +14,10 @@ final class AdminPage
     public function register(): void
     {
         $this->page_hook = (string) add_management_page(
-            __('SNWorks Cron Diagnostics', 'snworks-cron-diagnostics'),
-            __('Cron Diagnostics', 'snworks-cron-diagnostics'),
+            __('Nariyanto Cron Diagnostics', 'nariyanto-cron-diagnostics'),
+            __('Cron Diagnostics', 'nariyanto-cron-diagnostics'),
             self::CAPABILITY,
-            'snworks-cron-diagnostics',
+            'nariyanto-cron-diagnostics',
             [$this, 'render']
         );
 
@@ -31,10 +31,10 @@ final class AdminPage
         }
 
         wp_enqueue_script(
-            'snworks-cron-diagnostics-admin',
-            plugins_url('assets/admin.js', SNWORKS_CRON_DIAGNOSTICS_FILE),
+            'nariyanto-cron-diagnostics-admin',
+            plugins_url('assets/admin.js', NARIYANTO_CRON_DIAGNOSTICS_FILE),
             [],
-            SNWORKS_CRON_DIAGNOSTICS_VERSION,
+            NARIYANTO_CRON_DIAGNOSTICS_VERSION,
             true
         );
     }
@@ -42,7 +42,7 @@ final class AdminPage
     public function render(): void
     {
         if (! current_user_can(self::CAPABILITY)) {
-            wp_die(esc_html__('You do not have permission to view this page.', 'snworks-cron-diagnostics'));
+            wp_die(esc_html__('You do not have permission to view this page.', 'nariyanto-cron-diagnostics'));
         }
 
         $cron = function_exists('_get_cron_array') ? _get_cron_array() : [];
@@ -51,51 +51,51 @@ final class AdminPage
         $report_text = $inspector->reportText();
         ?>
         <div class="wrap">
-            <h1><?php echo esc_html__('SNWorks Cron Diagnostics', 'snworks-cron-diagnostics'); ?></h1>
-            <p><?php echo esc_html__('Read-only overview of scheduled WP-Cron events, duplicate hooks, and unusually frequent schedules.', 'snworks-cron-diagnostics'); ?></p>
+            <h1><?php echo esc_html__('Nariyanto Cron Diagnostics', 'nariyanto-cron-diagnostics'); ?></h1>
+            <p><?php echo esc_html__('Read-only overview of scheduled WP-Cron events, duplicate hooks, and unusually frequent schedules.', 'nariyanto-cron-diagnostics'); ?></p>
 
-            <h2><?php echo esc_html__('Summary', 'snworks-cron-diagnostics'); ?></h2>
+            <h2><?php echo esc_html__('Summary', 'nariyanto-cron-diagnostics'); ?></h2>
             <ul>
-                <li><?php /* translators: %d: total number of scheduled cron events. */ printf(esc_html__('Total events: %d', 'snworks-cron-diagnostics'), (int) $report['summary']['total_events']); ?></li>
-                <li><?php /* translators: %d: number of cron event instances whose hook appears more than once. */ printf(esc_html__('Duplicate event instances: %d', 'snworks-cron-diagnostics'), (int) $report['summary']['duplicate_hook_count']); ?></li>
-                <li><?php /* translators: %d: number of cron hooks scheduled more frequently than hourly. */ printf(esc_html__('Frequent hooks: %d', 'snworks-cron-diagnostics'), (int) $report['summary']['frequent_hook_count']); ?></li>
-                <li><?php /* translators: %d: number of cron events scheduled before the current time. */ printf(esc_html__('Overdue events: %d', 'snworks-cron-diagnostics'), (int) $report['summary']['overdue_event_count']); ?></li>
+                <li><?php /* translators: %d: total number of scheduled cron events. */ printf(esc_html__('Total events: %d', 'nariyanto-cron-diagnostics'), (int) $report['summary']['total_events']); ?></li>
+                <li><?php /* translators: %d: number of cron event instances whose hook appears more than once. */ printf(esc_html__('Duplicate event instances: %d', 'nariyanto-cron-diagnostics'), (int) $report['summary']['duplicate_hook_count']); ?></li>
+                <li><?php /* translators: %d: number of cron hooks scheduled more frequently than hourly. */ printf(esc_html__('Frequent hooks: %d', 'nariyanto-cron-diagnostics'), (int) $report['summary']['frequent_hook_count']); ?></li>
+                <li><?php /* translators: %d: number of cron events scheduled before the current time. */ printf(esc_html__('Overdue events: %d', 'nariyanto-cron-diagnostics'), (int) $report['summary']['overdue_event_count']); ?></li>
             </ul>
 
             <?php if (! empty($report['duplicates'])) : ?>
-                <h2><?php echo esc_html__('Duplicate hooks', 'snworks-cron-diagnostics'); ?></h2>
+                <h2><?php echo esc_html__('Duplicate hooks', 'nariyanto-cron-diagnostics'); ?></h2>
                 <p><?php echo esc_html(implode(', ', $report['duplicates'])); ?></p>
             <?php endif; ?>
 
             <?php if (! empty($report['frequent_hooks'])) : ?>
-                <h2><?php echo esc_html__('Unusually frequent hooks', 'snworks-cron-diagnostics'); ?></h2>
+                <h2><?php echo esc_html__('Unusually frequent hooks', 'nariyanto-cron-diagnostics'); ?></h2>
                 <p><?php echo esc_html(implode(', ', $report['frequent_hooks'])); ?></p>
             <?php endif; ?>
 
-            <h2><?php echo esc_html__('Copy support report', 'snworks-cron-diagnostics'); ?></h2>
-            <p><?php echo esc_html__('Use this read-only report in support tickets or debugging notes. Review it before sharing externally.', 'snworks-cron-diagnostics'); ?></p>
+            <h2><?php echo esc_html__('Copy support report', 'nariyanto-cron-diagnostics'); ?></h2>
+            <p><?php echo esc_html__('Use this read-only report in support tickets or debugging notes. Review it before sharing externally.', 'nariyanto-cron-diagnostics'); ?></p>
             <p>
-                <button type="button" class="button button-secondary" id="snworks-cron-diagnostics-copy-report">
-                    <?php echo esc_html__('Copy report', 'snworks-cron-diagnostics'); ?>
+                <button type="button" class="button button-secondary" id="nariyanto-cron-diagnostics-copy-report">
+                    <?php echo esc_html__('Copy report', 'nariyanto-cron-diagnostics'); ?>
                 </button>
-                <span id="snworks-cron-diagnostics-copy-status" aria-live="polite" data-copied-text="<?php echo esc_attr__('Copied.', 'snworks-cron-diagnostics'); ?>"></span>
+                <span id="nariyanto-cron-diagnostics-copy-status" aria-live="polite" data-copied-text="<?php echo esc_attr__('Copied.', 'nariyanto-cron-diagnostics'); ?>"></span>
             </p>
-            <textarea id="snworks-cron-diagnostics-report" class="large-text code" rows="12" readonly><?php echo esc_textarea($report_text); ?></textarea>
+            <textarea id="nariyanto-cron-diagnostics-report" class="large-text code" rows="12" readonly><?php echo esc_textarea($report_text); ?></textarea>
 
-            <h2><?php echo esc_html__('Events', 'snworks-cron-diagnostics'); ?></h2>
+            <h2><?php echo esc_html__('Events', 'nariyanto-cron-diagnostics'); ?></h2>
             <table class="widefat striped">
                 <thead>
                     <tr>
-                        <th><?php echo esc_html__('Hook', 'snworks-cron-diagnostics'); ?></th>
-                        <th><?php echo esc_html__('Next run (GMT)', 'snworks-cron-diagnostics'); ?></th>
-                        <th><?php echo esc_html__('Schedule', 'snworks-cron-diagnostics'); ?></th>
-                        <th><?php echo esc_html__('Interval', 'snworks-cron-diagnostics'); ?></th>
-                        <th><?php echo esc_html__('Flags', 'snworks-cron-diagnostics'); ?></th>
+                        <th><?php echo esc_html__('Hook', 'nariyanto-cron-diagnostics'); ?></th>
+                        <th><?php echo esc_html__('Next run (GMT)', 'nariyanto-cron-diagnostics'); ?></th>
+                        <th><?php echo esc_html__('Schedule', 'nariyanto-cron-diagnostics'); ?></th>
+                        <th><?php echo esc_html__('Interval', 'nariyanto-cron-diagnostics'); ?></th>
+                        <th><?php echo esc_html__('Flags', 'nariyanto-cron-diagnostics'); ?></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($report['events'] as $event) : ?>
-                        <?php $flags = array_filter([! empty($event['is_overdue']) ? __('overdue', 'snworks-cron-diagnostics') : '', ! empty($event['is_frequent']) ? __('frequent', 'snworks-cron-diagnostics') : '']); ?>
+                        <?php $flags = array_filter([! empty($event['is_overdue']) ? __('overdue', 'nariyanto-cron-diagnostics') : '', ! empty($event['is_frequent']) ? __('frequent', 'nariyanto-cron-diagnostics') : '']); ?>
                         <tr>
                             <td><code><?php echo esc_html((string) $event['hook']); ?></code></td>
                             <td><?php echo esc_html((string) $event['next_run_gmt']); ?></td>

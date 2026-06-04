@@ -1,9 +1,9 @@
-# WordPress.org Submission Notes — SNWorks Cron Diagnostics
+# WordPress.org Submission Notes — Nariyanto Cron Diagnostics
 
 Repository: https://github.com/nariyanto/wp-cron-inspector-lite
 GitHub release: https://github.com/nariyanto/wp-cron-inspector-lite/releases/tag/v0.1.2
-Release asset: `snworks-cron-diagnostics.zip`
-Target plugin slug: `snworks-cron-diagnostics`
+Release asset: `nariyanto-cron-diagnostics.zip`
+Target plugin slug: `nariyanto-cron-diagnostics`
 Version: `0.1.2`
 
 ## Short description
@@ -12,7 +12,7 @@ Find duplicate, stuck, and suspicious WordPress cron events before they cause su
 
 ## Suggested submission description
 
-SNWorks Cron Diagnostics is a read-only admin utility for WordPress support and debugging workflows. It lists scheduled WP-Cron events, highlights duplicate hooks, flags unusually frequent recurring events, counts overdue events, and provides a copyable support report.
+Nariyanto Cron Diagnostics is a read-only admin utility for WordPress support and debugging workflows. It lists scheduled WP-Cron events, highlights duplicate hooks, flags unusually frequent recurring events, counts overdue events, and provides a copyable support report.
 
 The first release is intentionally small and safe. It does not delete, reschedule, pause, or mutate cron events. It only reads WordPress' existing cron array and displays the information to administrators.
 
@@ -26,12 +26,12 @@ The first release is intentionally small and safe. It does not delete, reschedul
 - It only displays cron information to users with the `manage_options` capability.
 - The admin page is registered under **Tools → Cron Diagnostics**.
 - All admin output is escaped.
-- The plugin uses the `snworks-cron-diagnostics` text domain.
+- The plugin uses the `nariyanto-cron-diagnostics` text domain.
 - The release ZIP excludes development-only files such as `.git`, `.github`, `tests`, `docs`, and `scripts`.
 
 ## Privacy statement
 
-SNWorks Cron Diagnostics does not collect, store, transmit, or share personal data. The plugin reads scheduled WP-Cron events from the local WordPress installation and displays them only inside the WordPress admin area to administrators.
+Nariyanto Cron Diagnostics does not collect, store, transmit, or share personal data. The plugin reads scheduled WP-Cron events from the local WordPress installation and displays them only inside the WordPress admin area to administrators.
 
 The copyable support report is generated locally in the browser/admin page. Site administrators should review the report before sharing it in support tickets.
 
@@ -47,7 +47,7 @@ The copyable support report is generated locally in the browser/admin page. Site
 
 1. Log in to WordPress.org as `nariyanto`.
 2. Open the plugin submission page: https://wordpress.org/plugins/developers/add/
-3. Upload the GitHub release asset: `snworks-cron-diagnostics.zip`.
+3. Upload the GitHub release asset: `nariyanto-cron-diagnostics.zip`.
 4. Use the short description above.
 5. Add reviewer notes from this document if the form provides a notes field.
 6. Submit for review.

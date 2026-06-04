@@ -2,9 +2,9 @@
     'use strict';
 
     document.addEventListener('DOMContentLoaded', function () {
-        var button = document.getElementById('snworks-cron-diagnostics-copy-report');
-        var report = document.getElementById('snworks-cron-diagnostics-report');
-        var status = document.getElementById('snworks-cron-diagnostics-copy-status');
+        var button = document.getElementById('nariyanto-cron-diagnostics-copy-report');
+        var report = document.getElementById('nariyanto-cron-diagnostics-report');
+        var status = document.getElementById('nariyanto-cron-diagnostics-copy-status');
 
         if (!button || !report || !status) {
             return;

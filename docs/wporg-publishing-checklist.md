@@ -1,7 +1,7 @@
 # WordPress.org Publishing Checklist
 
 Repository: `wp-cron-inspector-lite`
-Plugin slug target: `snworks-cron-diagnostics`
+Plugin slug target: `nariyanto-cron-diagnostics`
 
 ## Current status
 
@@ -9,17 +9,17 @@ Plugin slug target: `snworks-cron-diagnostics`
 - Plugin has been tested on the staging site `peepso.nariyanto.id`.
 - Plugin is read-only and does not delete or mutate cron events.
 - CI runs PHP tests, readme metadata validation, and PHP syntax checks.
-- Release workflow builds `dist/snworks-cron-diagnostics.zip` for GitHub release assets.
+- Release workflow builds `dist/nariyanto-cron-diagnostics.zip` for GitHub release assets.
 - A screenshot from the staging site is available in `docs/screenshots/` for GitHub documentation.
 - WordPress.org banner/icon assets are prepared in `.wordpress-org/`.
 - Submission notes are prepared in `docs/wordpress-org-submission-notes.md`.
-- Translation template exists at `languages/snworks-cron-diagnostics.pot`.
+- Translation template exists at `languages/nariyanto-cron-diagnostics.pot`.
 
 ## Before WordPress.org submission
 
 - [ ] Finalize the v0.1.2 feature scope; avoid adding destructive cleanup in the first submission.
-- [ ] Review all user-facing strings for text domain `snworks-cron-diagnostics`.
-- [ ] Regenerate `languages/snworks-cron-diagnostics.pot` after any string changes.
+- [ ] Review all user-facing strings for text domain `nariyanto-cron-diagnostics`.
+- [ ] Regenerate `languages/nariyanto-cron-diagnostics.pot` after any string changes.
 - [ ] Run local tests: `php tests/run.php`.
 - [ ] Run PHP syntax checks: `find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l`.
 - [ ] Confirm `readme.txt` metadata: contributors, tags, requires, tested up to, requires PHP, stable tag, license.

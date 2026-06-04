@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to SNWorks Cron Diagnostics will be documented in this file.
+All notable changes to Nariyanto Cron Diagnostics will be documented in this file.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project uses semantic versioning for GitHub releases.
 
@@ -8,7 +8,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 
 ### Changed
 
-- Renamed the plugin display name, text domain, admin page slug, and package slug to `snworks-cron-diagnostics`.
+- Renamed the plugin display name, text domain, admin page slug, and package slug to `nariyanto-cron-diagnostics`.
 
 ## [0.1.1] - 2026-06-03
 
@@ -27,7 +27,7 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - Unusually frequent recurring hook detection for intervals shorter than one hour.
 - Overdue event counting.
 - Copyable plain-text support report.
-- Translation template for the `snworks-cron-diagnostics` text domain.
+- Translation template for the `nariyanto-cron-diagnostics` text domain.
 - Local PHP test runner and GitHub Actions CI.
 
 ### Notes

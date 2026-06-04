@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 $root = dirname(__DIR__);
 $readme = file_get_contents($root . '/readme.txt');
-$plugin = file_get_contents($root . '/snworks-cron-diagnostics.php');
+$plugin = file_get_contents($root . '/nariyanto-cron-diagnostics.php');
 
 if (false === $readme || false === $plugin) {
     fwrite(STDERR, "Unable to read plugin metadata files.\n");
@@ -14,7 +14,7 @@ if (false === $readme || false === $plugin) {
 $failures = [];
 
 $required_readme_patterns = [
-    '/^=== SNWorks Cron Diagnostics ===$/m' => 'readme plugin title',
+    '/^=== Nariyanto Cron Diagnostics ===$/m' => 'readme plugin title',
     '/^Contributors:\s*nariyanto$/m' => 'readme contributors',
     '/^Requires at least:\s*6\.0$/m' => 'minimum WordPress version',
     '/^Requires PHP:\s*7\.4$/m' => 'minimum PHP version',
@@ -31,9 +31,9 @@ foreach ($required_readme_patterns as $pattern => $label) {
 }
 
 $required_plugin_patterns = [
-    '/Plugin Name:\s*SNWorks Cron Diagnostics/' => 'plugin name',
+    '/Plugin Name:\s*Nariyanto Cron Diagnostics/' => 'plugin name',
     '/Version:\s*0\.1\.2/' => 'plugin version',
-    '/Text Domain:\s*snworks-cron-diagnostics/' => 'text domain',
+    '/Text Domain:\s*nariyanto-cron-diagnostics/' => 'text domain',
     '/Domain Path:\s*\/languages/' => 'domain path',
     '/Requires at least:\s*6\.0/' => 'plugin minimum WordPress version',
     '/Requires PHP:\s*7\.4/' => 'plugin minimum PHP version',

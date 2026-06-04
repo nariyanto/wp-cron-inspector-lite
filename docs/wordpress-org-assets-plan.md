@@ -1,4 +1,4 @@
-# WordPress.org Asset Plan — SNWorks Cron Diagnostics
+# WordPress.org Asset Plan — Nariyanto Cron Diagnostics
 
 WordPress.org assets are committed to the assigned plugin SVN repository under `assets/` after approval. This GitHub repository keeps prepared assets under `.wordpress-org/` so they are ready to copy.
 
@@ -32,7 +32,7 @@ Add this to SVN `assets/` and reference it in `readme.txt` if we want it shown o
 
 Suggested screenshot caption:
 
-> SNWorks Cron Diagnostics shows scheduled WP-Cron events, duplicate hooks, frequent schedules, overdue events, and a copyable support report.
+> Nariyanto Cron Diagnostics shows scheduled WP-Cron events, duplicate hooks, frequent schedules, overdue events, and a copyable support report.
 
 ## Notes
 
